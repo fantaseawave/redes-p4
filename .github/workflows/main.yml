@@ -5,6 +5,8 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v2
+      - name: Set execute permission for run-grader
+        run: chmod +x run-grader  # Corrige permissão antes da execução
       - name: Download and run grader
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
